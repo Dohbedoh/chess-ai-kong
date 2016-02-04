@@ -1,6 +1,6 @@
 # ChessCorp Artificial Intelligence: Kong
 
-## Abstract
+## Abstract 
 
 This project is an example of an Artificial Intelligence module.
 
