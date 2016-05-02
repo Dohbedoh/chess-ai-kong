@@ -83,7 +83,7 @@ module.exports = function (grunt) {
   });
 
   grunt.loadNpmTasks("gruntify-eslint");
-  grunt.registerTask('default', ['clean', 'jshint', 'test', 'browserify', 'uglify', 'eslint']);
+  grunt.registerTask('default', ['clean', 'jshint', 'test', 'browserify', 'uglify']);
   grunt.registerTask('test', ['mochacov:test']);
   grunt.registerTask('travis', ['default', 'mochacov:coverage']);
 };
