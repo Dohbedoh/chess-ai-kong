@@ -71,10 +71,19 @@ module.exports = function (grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'mochacli']
       }
-    }
+    },
+	eslint: {
+	    nodeFiles: {
+          src: ["src/**/*.js"],
+          options: {
+            configFile: "conf/eslint-node.json"
+          }
+        }
+	}
   });
 
-  grunt.registerTask('default', ['clean', 'jshint', 'test', 'browserify', 'uglify']);
+  grunt.loadNpmTasks("gruntify-eslint");
+  grunt.registerTask('default', ['clean', 'jshint', 'test', 'browserify', 'uglify', 'eslint']);
   grunt.registerTask('test', ['mochacov:test']);
   grunt.registerTask('travis', ['default', 'mochacov:coverage']);
 };
