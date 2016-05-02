@@ -1,6 +1,6 @@
 node ('master') {
     stage 'checkout'
-    checkout 
+    checkout scm
     
     stage 'Install'
     def nodeInstall = tool name: 'node (latest)', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
