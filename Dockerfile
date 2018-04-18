@@ -1,6 +1,9 @@
 FROM node:6
 
-USER 1000:1000
+RUN groupadd --gid 20 jenkins \
+  && useradd --uid 501 --gid node --shell /bin/bash --create-home jenkins
+  
+USER 501:20
 
 RUN git config --global user.email "aburdajewicz@cloudbees.com" 
 RUN git config --global user.name "dohbedoh" 
