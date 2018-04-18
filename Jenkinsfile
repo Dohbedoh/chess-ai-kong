@@ -13,11 +13,10 @@ pipeline {
         	stage('Publish new development version') { 
 			steps { 
 				sh """ 
-				ls -al 
+				ls -al
+				git config -l
 				git branch 
-
-				npm install 
-				npm version prerelease 
+				npm install chess-ai-kong
 				git push
 				""" 
 			} 
