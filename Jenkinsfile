@@ -1,11 +1,30 @@
-node ('master') {
-    stage 'checkout'
-    checkout scm
-    
-    stage 'Install'
-    def nodeInstall = tool name: 'node (latest)', type: 'jenkins.plugins.nodejs.tools.NodeJSInstallation'
-    sh "${nodeInstall}/bin/npm install"
-    
-    stage 'Build & Test'
-    sh "grunt"
+#!/usr/bin/env groovy
+
+pipeline {
+    agent any 
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Publish new development version') { 
+			agent { 
+				dockerfile true 
+			} 
+			steps { 
+				sh """ 
+				whoami 
+				ls -al 
+				env | sort 
+				git branch 
+
+				npm install 
+				npm version prerelease 
+				git push
+				""" 
+			} 
+		}
+    }
 }
+
