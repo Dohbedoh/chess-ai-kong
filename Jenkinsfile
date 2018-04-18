@@ -12,6 +12,10 @@ pipeline {
 			}		
 			steps { 
 				sh """ 
+				cat > ~/.ssh/config << EOF
+Host *
+  StrictHostKeyChecking no
+EOF
 					ls -al
 					git config core.sshCommand \"ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\"
 					git config -l
