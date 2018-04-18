@@ -9,7 +9,7 @@ pipeline {
 			}
 			steps { 
 				sh """ 
-				export GIT_SSH='ssh -vvv -oStrictHostKeyChecking=no'
+				export GIT_SSH_COMMAND='ssh -vvv -oStrictHostKeyChecking=no'
 				env
 				ls -al
 				git config -l
