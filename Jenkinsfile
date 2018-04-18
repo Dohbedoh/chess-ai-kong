@@ -14,6 +14,7 @@ pipeline {
 			steps { 
 				sh """ 
 				ls -al
+				git config --global push.default matching
 				git config -l
 				git branch 
 				# npm install chess-ai-kong
