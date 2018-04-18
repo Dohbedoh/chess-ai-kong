@@ -6,5 +6,5 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
 && apt-get update && apt-get install -y google-chrome-stable
 
 RUN git config --global user.email "aburdajewicz@cloudbees.com" 
-RUN git config --global user.name "support-team" 
+RUN git config --global user.name "dohbedoh" 
 RUN git config --global push.default matching
