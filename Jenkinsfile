@@ -16,7 +16,7 @@ pipeline {
 				ls -al
 				git config -l
 				git branch 
-				npm install chess-ai-kong
+				# npm install chess-ai-kong
 				git push
 				""" 
 			} 
