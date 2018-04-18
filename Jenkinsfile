@@ -11,7 +11,8 @@ pipeline {
 				GIT_SSH_COMMAND = "ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 			}		
 			steps { 
-				sh """ 
+				sh """
+				mkdir ~/.ssh
 				cat > ~/.ssh/config << EOF
 Host *
   StrictHostKeyChecking no
