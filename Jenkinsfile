@@ -13,7 +13,6 @@ pipeline {
 			steps { 
 				sh """ 
 					ls -al
-					ssh -v localhost
 					git config core.sshCommand \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\"
 					git config -l
 					git branch 
