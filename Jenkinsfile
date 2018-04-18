@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    agent any 
+    agent { label "docker" }
     stages {
         stage('Checkout') {
             steps {
@@ -9,11 +9,11 @@ pipeline {
             }
         }
         stage('Publish new development version') { 
-			agent { 
-				dockerfile true 
-			} 
-			steps { 
-				sh """ 
+		agent { 
+			dockerfile true 
+		} 
+		steps { 
+			sh """ 
 				whoami 
 				ls -al 
 				env | sort 
@@ -23,8 +23,8 @@ pipeline {
 				npm version prerelease 
 				git push
 				""" 
-			} 
-		}
+		} 
+	}
     }
 }
 
