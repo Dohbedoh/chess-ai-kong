@@ -13,7 +13,7 @@ pipeline {
 			steps { 
 				sh """ 
 					ls -al
-					git config core.sshCommand "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+					git config core.sshCommand \"ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\"
 					git config -l
 					git branch 
 					# npm install chess-ai-kong
