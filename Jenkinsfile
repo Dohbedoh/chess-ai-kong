@@ -15,6 +15,7 @@ pipeline {
 				git config -l
 				git branch 
 				# npm install chess-ai-kong
+				which ssh
 				git push
 				""" 
 			} 
