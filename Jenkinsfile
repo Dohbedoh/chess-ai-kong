@@ -12,10 +12,8 @@ pipeline {
 			}		
 			steps { 
 				sh """ 
-					export GIT_SSH_COMMAND='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-					which ssh
-					env
 					ls -al
+					git config core.sshCommand "ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 					git config -l
 					git branch 
 					# npm install chess-ai-kong
