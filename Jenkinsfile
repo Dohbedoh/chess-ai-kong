@@ -13,9 +13,7 @@ pipeline {
         	stage('Publish new development version') { 
 			steps { 
 				sh """ 
-				whoami 
 				ls -al 
-				env | sort 
 				git branch 
 
 				npm install 
