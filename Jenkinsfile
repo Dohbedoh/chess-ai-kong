@@ -1,11 +1,11 @@
 #!/usr/bin/env groovy
 
 pipeline {
-    	stages {
-		agent {
-			dockerfile true
-		}
-        	stage('Publish new development version') { 
+    	stages { 
+        	stage('Publish new development version') { 			
+			agent { 
+				dockerfile true 
+			}
 			steps { 
 				sh """ 
 				ls -al
