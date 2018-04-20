@@ -11,7 +11,7 @@ pipeline {
 //				GIT_SSH_COMMAND = "ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 //			}		
 			steps { 
-				sshagent('mycred') { 
+				sshagent(['mycred']) {
 					sh """
 					mkdir ~/.ssh
 					cat > ~/.ssh/config << EOF
