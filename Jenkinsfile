@@ -21,9 +21,9 @@ EOF
 						ls -al
 						git config core.sshCommand \"ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no\"
 						git config -l
-						git branch 
+						git branch -b feature/$BUILD_NUMBER
 						# npm install chess-ai-kong
-						git push
+						git push -u origin feature/$BUILD_NUMBER
 					""" 
 				} 
 			} 
