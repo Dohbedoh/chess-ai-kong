@@ -5,16 +5,14 @@ pipeline {
     	stages { 
         	stage('Publish new development version') { 	
 //			agent any
-			agent { 
-				dockerfile true 
-			}
+			agent { dockerfile true }
 //			environment { 
 //				GIT_SSH_COMMAND = "ssh -vvv -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 //			}		
 			steps { 
 				sshagent(['mycred']) {
 					sh """
-#					mkdir ~/.ssh
+					mkdir ~/.ssh
 					cat > ~/.ssh/config << EOF
 Host *
   StrictHostKeyChecking no
