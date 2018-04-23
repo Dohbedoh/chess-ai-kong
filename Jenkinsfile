@@ -1,6 +1,6 @@
-pipeline { 
-    //agent any
-    agent label: 'docker'
+pipeline {  
+    agent any
+    //agent label: 'docker'
     stages {
         stage('Publish new development version') {
             //			agent any
